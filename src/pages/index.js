@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Container from "../components/container/Container.comp";
 
 export default function Home() {
   return (
@@ -10,7 +11,9 @@ export default function Home() {
       </Head>
 
       <main>
-        <h2>Hello World</h2>
+        <Container>
+          <h2>Hello World</h2>
+        </Container>
       </main>
     </div>
   )
