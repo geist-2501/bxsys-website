@@ -11,16 +11,17 @@ jobs:
     runs-on: self-hosted
     env:
       IMAGE_NAME: bxsys:website
+      CONT_NAME: bxsys_web_prod
 
     steps:
     - uses: actions/checkout@v2
 
     - name: Stop old contianer.
       continue-on-error: true
-      run: docker stop $IMAGE_NAME
+      run: docker stop $CONT_NAME
 
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
     - name: Deploy
-      run: docker run -dp 3000:3000 $IMAGE_NAME
+      run: docker run --rm -dp 3000:3000 --name $CONT_NAME $IMAGE_NAME
