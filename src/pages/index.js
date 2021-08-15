@@ -12,7 +12,7 @@ export default function Home() {
 
       <main>
         <Container>
-          <h2>Hello World</h2>
+          <h2>Hello World, I&apos;m an update!</h2>
         </Container>
       </main>
     </div>
