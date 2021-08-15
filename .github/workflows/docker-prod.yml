@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Image Deploy
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
 
     runs-on: self-hosted
     env:
-      IMAGE_NAME: bxsys:website
+      IMAGE_NAME: bxsys/website:prod
       CONT_NAME: bxsys_web_prod
 
     steps:

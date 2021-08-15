@@ -1,0 +1,21 @@
+name: Docker Image Test
+
+on: push
+
+jobs:
+
+  build:
+
+    runs-on: self-hosted
+    env:
+      IMAGE_NAME: bxsys/website:test
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Stop old contianer.
+        continue-on-error: true
+        run: docker stop $CONT_NAME
+
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME --target test
