@@ -3,14 +3,24 @@ name: Docker Image CI
 on:
   push:
     branches: [ master ]
-    
+
 jobs:
 
   build:
 
     runs-on: self-hosted
+    env:
+      IMAGE_NAME: bxsys:website
 
     steps:
     - uses: actions/checkout@v2
+
+    - name: Stop old contianer.
+      run: docker stop $IMAGE_NAME
+
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag $IMAGE_NAME
+
+
+    - name: Deploy
+      run: docker run -dp 3000:3000 $IMAGE_NAME
