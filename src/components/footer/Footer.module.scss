@@ -7,4 +7,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  .copyright {
+    margin-right: 50px;
+
+    span {
+      font-family: "IBM Plex Sans", sans-serif;
+      font-weight: bold;
+    }
+  }
 }

@@ -1,6 +1,8 @@
 @import "src/vars";
 
 .link {
+  line-height: 0;
+  width: 20px;
   margin: 0 10px;
   font-size: 22px;
   color: $bxsys-black;
