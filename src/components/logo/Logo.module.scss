@@ -1,0 +1,16 @@
+@import "src/vars";
+
+.logo_bg {
+
+  padding: 10px;
+  border-radius: 2px;
+  background-color: $bxsys-black;
+
+  .logo {
+    font-size: 36px;
+    margin-right: 50px;
+    line-height: 0.8;
+    padding-top: 1px;
+    color: $bxsys-white;
+  }
+}

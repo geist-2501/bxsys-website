@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+@import "vars";
+
+* {
+  font-family: Roboto, sans-serif;
+  color: $bxsys-black;
+}
+
+body {
+  background-color: $bxsys-white;
+  position: relative;
+}
+
+h1 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: bold;
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 36px;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: normal;
+}

@@ -1,0 +1,12 @@
+.col {
+  color: red;
+  @for $i from 1 through 6 {
+    &.from_#{$i}{
+      grid-column-start: $i;
+    }
+
+    &.to_#{$i}{
+      grid-column-end: $i;
+    }
+  }
+}

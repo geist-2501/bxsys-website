@@ -1,0 +1,27 @@
+$top-gutter: 20px;
+$side-gutter: 130px;
+
+.navbar {
+
+  .logo {
+    position: fixed;
+    top: $top-gutter;
+    left: $side-gutter;
+  }
+
+  .links {
+    position: fixed;
+    top: $top-gutter;
+    right: $side-gutter;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-left: auto;
+
+    & > * {
+      margin: 0 5px;
+    }
+  }
+}

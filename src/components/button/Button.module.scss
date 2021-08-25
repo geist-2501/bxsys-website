@@ -1,0 +1,21 @@
+@import "src/vars";
+
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: fit-content;
+
+  text-decoration: none;
+
+  .arrow {
+    margin-right: 10px;
+  }
+
+  transition: border ease-in-out 120ms;
+  border-bottom: transparent solid 1px;
+  &:hover {
+    border-bottom: $bxsys-black solid 1px;
+  }
+}
