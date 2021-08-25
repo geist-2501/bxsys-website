@@ -2,14 +2,28 @@ import React from 'react';
 import Link from 'next/link'
 import fs from 'fs';
 import path from 'path';
+import Page from "../../components/page/Page.comp";
+import Navbar from "../../components/navbar/Navbar.comp";
+import Footer from "../../components/footer/Footer.comp";
+import Section from "../../components/section/Section.comp";
+import Container from "../../components/container/Container.comp";
+import Column from "../../components/column/Column.comp";
 
 const BlogIndex = ({ fileNames }) => {
 
   return (
-    <div>
-      <h1>All blogs</h1>
-      {fileNames.map((fileName, i) => <Link href={'/blog/'+fileName} key={i}>{fileName}</Link>)}
-    </div>
+    <Page>
+      <Section>
+        <Container>
+          <Column>
+            <h1>All blogs</h1>
+            <ul>
+              {fileNames.map((fileName, i) => <li><Link href={'/blog/'+fileName} key={i}>{fileName}</Link></li>)}
+            </ul>
+          </Column>
+        </Container>
+      </Section>
+    </Page>
   );
 };
 

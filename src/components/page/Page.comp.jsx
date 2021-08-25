@@ -1,6 +1,8 @@
 import React from 'react';
 import Head from "next/head";
 import PropTypes from "prop-types";
+import Navbar from "../navbar/Navbar.comp";
+import Footer from "../footer/Footer.comp";
 
 const Page = ({meta, children}) => {
   return (
@@ -9,7 +11,9 @@ const Page = ({meta, children}) => {
         <title>{meta.name}</title>
         <meta name="description" content={meta.desc} />
       </Head>
+      <Navbar />
       {children}
+      <Footer />
     </div>
   );
 };

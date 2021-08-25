@@ -1,16 +1,13 @@
 import styles from './index.module.scss';
 import Container from "../components/container/Container.comp";
 import Section from "../components/section/Section.comp";
-import Navbar from "../components/navbar/Navbar.comp";
 import Column from "../components/column/Column.comp";
 import Button from "../components/button/Button.comp";
-import Footer from "../components/footer/Footer.comp";
 import Page from "../components/page/Page.comp";
 
 const Index = () => {
   return (
     <Page meta={{name: "Index | BXSYS", desc: "Beep boop"}}>
-      <Navbar/>
       <Section type="hero">
         <Container>
           <Column to={4} className={styles.occupation}>
@@ -28,7 +25,6 @@ const Index = () => {
           </Column>
         </Container>
       </Section>
-      <Footer/>
     </Page>
   );
 }
