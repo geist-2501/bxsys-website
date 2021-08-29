@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "vars";
+
+* {
+  font-family: Roboto, sans-serif;
+  color: $bxsys-black;
+}
+
+code {
+  font-family: "Roboto Mono", monospace;
+}
+
+body {
+  background-color: $bxsys-white;
+  position: relative;
+}
+
+h1 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: bold;
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 36px;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: normal;
+}

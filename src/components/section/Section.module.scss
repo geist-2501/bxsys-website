@@ -1,0 +1,16 @@
+.section {
+  display: flex;
+  flex-direction: column;
+
+  padding: 40px 0;
+
+  &.hero {
+    justify-content: center;
+    min-height: 100vh;
+    padding: 100px 0;
+  }
+
+  &.lead {
+    padding-top: 18vh;
+  }
+}
