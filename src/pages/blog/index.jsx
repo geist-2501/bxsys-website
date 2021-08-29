@@ -15,7 +15,7 @@ const BlogIndex = ({ fileNames }) => {
           <Column>
             <h1>All blogs</h1>
             <ul>
-              {fileNames.map((fileName, i) => <li><Link href={'/blog/'+fileName} key={i}>{fileName}</Link></li>)}
+              {fileNames.map((fileName, i) => <li key={i}><Link href={'/blog/'+fileName}>{fileName}</Link></li>)}
             </ul>
           </Column>
         </Container>
