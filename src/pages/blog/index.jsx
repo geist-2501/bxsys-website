@@ -1,13 +1,10 @@
 import React from 'react';
 import Link from 'next/link'
-import fs from 'fs';
-import path from 'path';
 import Page from "../../components/page/Page.comp";
-import Navbar from "../../components/navbar/Navbar.comp";
-import Footer from "../../components/footer/Footer.comp";
 import Section from "../../components/section/Section.comp";
 import Container from "../../components/container/Container.comp";
 import Column from "../../components/column/Column.comp";
+import MdxUtil from "../../utils/mdx.util";
 
 const BlogIndex = ({ fileNames }) => {
 
@@ -28,12 +25,10 @@ const BlogIndex = ({ fileNames }) => {
 };
 
 export async function getStaticProps() {
-  const fileNames = fs.readdirSync('./src/pages/blog');
-  const sanitized = fileNames.map((file => path.parse(file).name));
-  sanitized.splice(fileNames.indexOf('index'), 1);
+  const docs = MdxUtil.getDocs('./src/pages/blog', ['index']);
   return {
     props: {
-      fileNames: sanitized
+      fileNames: docs
     }
   }
 }

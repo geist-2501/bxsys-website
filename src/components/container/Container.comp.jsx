@@ -4,7 +4,7 @@ import classes from "../../utils/classes";
 
 const Container = ({ children, className, ...props }) => {
   return (
-    <div className={classes(styles.container, className)} {...props}>
+    <div className={classes(className, styles.container)} {...props}>
       {children}
     </div>
   );

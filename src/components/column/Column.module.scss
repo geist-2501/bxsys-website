@@ -1,5 +1,8 @@
 .col {
-  color: red;
+
+  display: flex;
+  flex-direction: column;
+
   @for $i from 1 through 6 {
     &.from_#{$i}{
       grid-column-start: $i;
@@ -8,5 +11,17 @@
     &.to_#{$i}{
       grid-column-end: $i;
     }
+  }
+
+  .right {
+    align-items: flex-end;
+  }
+
+  .center {
+    align-items: center;
+  }
+
+  .left {
+    align-items: flex-start;
   }
 }

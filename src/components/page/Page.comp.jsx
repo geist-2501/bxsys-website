@@ -3,8 +3,12 @@ import Head from "next/head";
 import PropTypes from "prop-types";
 import Navbar from "../navbar/Navbar.comp";
 import Footer from "../footer/Footer.comp";
+import styles from './Page.module.scss';
 
-const Page = ({meta, children}) => {
+const Page = ({meta, margin, children}) => {
+
+  const marginClass = margin ? styles[`m-${margin}`] : styles.m_reg
+
   return (
     <div>
       <Head>
@@ -12,7 +16,9 @@ const Page = ({meta, children}) => {
         <meta name="description" content={meta.desc} />
       </Head>
       <Navbar />
-      {children}
+      <div className={marginClass}>
+        {children}
+      </div>
       <Footer />
     </div>
   );

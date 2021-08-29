@@ -7,7 +7,7 @@ import Page from "../components/page/Page.comp";
 
 const Index = () => {
   return (
-    <Page meta={{name: "Index | BXSYS", desc: "Beep boop"}}>
+    <Page meta={{name: "Index | BXSYS", desc: "Beep boop"}} margin={'none'}>
       <Section type="hero">
         <Container>
           <Column to={4} className={styles.occupation}>
