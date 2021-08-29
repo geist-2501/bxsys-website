@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Portfolio.module.scss';
+import styles from './portfolio.module.scss';
 import Page from "../components/page/Page.comp";
 import Section from "../components/section/Section.comp";
 import Container from "../components/container/Container.comp";
