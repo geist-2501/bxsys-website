@@ -1,0 +1,8 @@
+version: '3'
+services:
+  nextjs:
+    build: ./
+  nginx:
+    build: ./nginx
+    ports:
+    - 443:443

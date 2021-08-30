@@ -16,12 +16,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Stop old contianer.
-      continue-on-error: true
-      run: docker stop $CONT_NAME
-
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag $IMAGE_NAME
-
-    - name: Deploy
-      run: docker run --rm -dp 3000:3000 --name $CONT_NAME $IMAGE_NAME
+    - name: Compose Up
+      run: docker-compose up --build -d
