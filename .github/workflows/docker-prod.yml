@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Inject Certs
-      run: ./inject-certs.sh
+      run: chmod +x inject-certs.sh ; ./inject-certs.sh
 
     - name: Compose Up
       run: docker-compose up --build -d
