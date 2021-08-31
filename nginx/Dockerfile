@@ -3,6 +3,7 @@ FROM nginx:alpine
 RUN rm /etc/nginx/conf.d/*
 
 COPY ./default.conf /etc/nginx/conf.d/
+COPY ./certs/* /etc/nginx/certs/
 
 EXPOSE 443
 
