@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Inject Certs
-      run cp /etc/ssl/certs/bxsys.dev.* ./nginx/certs/
+      run: cp /etc/ssl/certs/bxsys.dev.* ./nginx/certs/
 
     - name: Compose Up
       run: docker-compose up --build -d
