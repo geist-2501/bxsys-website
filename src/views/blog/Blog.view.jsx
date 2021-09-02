@@ -8,11 +8,17 @@ import Column from "../../components/column/Column.comp";
 const BlogView = ({meta, children}) => {
   return (
     <Page>
-      <Section>
+      <Section type="lead">
         <Container>
           <Column>
-            <h1>{meta.title}</h1>
-            <h4>{meta.author} - {meta.date}</h4>
+            <div className={styles.blog_view_title}>
+              <h1>{meta.title}</h1>
+              <h4>
+                <i className={styles.blog_view_date}>{meta.date}.</i>
+                <i>{meta.author}.</i>
+              </h4>
+            </div>
+
             <div className={styles.markdown}>
               {children}
             </div>

@@ -22,7 +22,7 @@ const IndexPage = () => {
             <h4>(Sometimes at the same time)</h4>
           </Column>
           <Column>
-            <Button href={'/'}><h3>See what I've been up too</h3></Button>
+            <Button href={'/project'}><h3>See what I've been up too</h3></Button>
           </Column>
         </Container>
       </Section>
