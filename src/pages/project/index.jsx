@@ -1,12 +1,7 @@
-import React from 'react';
-import Page from "../../components/page/Page.comp";
+import ProjectPage from "../../views/project/Project.page";
 
 const ProjectIndex = () => {
-  return (
-    <Page>
-      <h1>Projects</h1>
-    </Page>
-  );
+  return <ProjectPage />;
 };
 
 export default ProjectIndex;

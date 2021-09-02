@@ -1,9 +1,12 @@
-import BlogPost from "../../components/blogPost/BlogPost.comp";
+import BlogView from "../../views/blog/Blog.view";
 export const meta = {
-  date: '4th Aug 2021'
+  title: 'Test blog post 2',
+  author: 'Blair',
+  date: '4th Aug 2021',
+  desc: 'Sometimes there are things that are really important. In this post Im going to talk about those things.'
 }
 
-export default ({children}) => <BlogPost meta={meta}>{children}</BlogPost>;
+export default ({children}) => <BlogView meta={meta}>{children}</BlogView>;
 
 # Another test blog post.
 

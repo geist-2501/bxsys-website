@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './BlogPost.module.scss';
-import Page from "../page/Page.comp";
-import Section from "../section/Section.comp";
-import Container from "../container/Container.comp";
-import Column from "../column/Column.comp";
+import styles from './Blog.module.scss';
+import Page from "../../components/page/Page.comp";
+import Section from "../../components/section/Section.comp";
+import Container from "../../components/container/Container.comp";
+import Column from "../../components/column/Column.comp";
 
-const BlogPost = ({meta, children}) => {
+const BlogView = ({meta, children}) => {
   return (
     <Page>
       <Section>
@@ -23,4 +23,4 @@ const BlogPost = ({meta, children}) => {
   );
 };
 
-export default BlogPost;
+export default BlogView;
