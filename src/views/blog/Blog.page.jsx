@@ -19,19 +19,19 @@ const BlogPage = ({ posts }) => {
         <Container>
           <Column to={4}>
             <h2>All.</h2>
-            {posts.map((file, i) => (
-              <div key={i}>
+            {posts.map((post, i) => (
+              <div key={i} className={styles.post_wrapper}>
                 <div>
-                  <Bullet />
+                  <Bullet className={styles.bullet} />
                 </div>
                 <div>
                   <div>
-                    <i className={styles.date}>{file.date}.</i>
-                    <i>{file.author}.</i>
+                    <i className={styles.date}>{post.date}.</i>
+                    <i>{post.author}.</i>
                   </div>
-                  <h3>{file.title}</h3>
-                  <p>{file.desc}</p>
-                  <Button href={'/'}>Read More</Button>
+                  <h4>{post.title}</h4>
+                  <p>{post.desc}</p>
+                  <Button href={`/blog/${post.name}`} className={styles.button}>Read More</Button>
                 </div>
               </div>
             ))}
