@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './Blog.module.scss';
 import Section from "../../components/section/Section.comp";
 import Container from "../../components/container/Container.comp";
@@ -6,13 +6,16 @@ import Column from "../../components/column/Column.comp";
 import Bullet from "../../components/bullet/Bullet.comp";
 import Button from "../../components/button/Button.comp";
 import Page from "../../components/page/Page.comp";
+import DateService from "../../utils/date.service";
 
 const BlogPage = ({ posts }) => {
+
   return (
     <Page>
       <Section>
         <Container>
           <Column>
+            <h1>📐</h1>
             <h1>Technical Blog.</h1>
           </Column>
         </Container>
@@ -26,7 +29,7 @@ const BlogPage = ({ posts }) => {
                 </div>
                 <div>
                   <div>
-                    <i className={styles.date}>{post.date}.</i>
+                    <i className={styles.date}>{DateService.toDate(post.date)}.</i>
                     <i>{post.author}.</i>
                   </div>
                   <h4>{post.title}</h4>
@@ -39,7 +42,7 @@ const BlogPage = ({ posts }) => {
           <Column from={4}>
             <h2>Preface.</h2>
             <p>
-              Software developement is a process. One that lives, and iteratively improves. <br />
+              Software development is a process. One that lives, and iteratively improves. <br />
               <br />
               I am also a process, that is also living, and that (supposedly) improves. I write about the bits and peices of software development as I learn them.<br />
               <br />

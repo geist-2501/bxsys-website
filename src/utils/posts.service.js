@@ -19,6 +19,8 @@ export default class PostsService {
       }
     }
 
+    postMetas.sort((a, b) => b.date - a.date);
+
     return postMetas;
   }
 
