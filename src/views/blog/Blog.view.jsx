@@ -10,7 +10,7 @@ const BlogView = ({meta, children}) => {
   return (
     <Page>
       <Section type="lead">
-        <Container>
+        <Container type="thin">
           <Column>
             <div className={styles.blog_view_title}>
               <h1>{meta.title}</h1>

@@ -2,64 +2,49 @@ import BlogView from "../../views/blog/Blog.view";
 export const meta = {
   title: 'How I Built This Site.',
   author: 'Blair Cross',
-  date: new Date(2021, 7, 3).getTime(),
+  date: new Date(2021, 8, 4).getTime(),
   tags: 'MDX, React, NextJS, Javascript, Blog',
   desc: 'Sometimes there are things that are really important. In this post Im going to talk about those things.'
 }
 
 export default ({children}) => <BlogView meta={meta}>{children}</BlogView>;
 
-*Lorem markdownum* laetos; quoque paulum perstat pura. Stetit quam offensane
-vestra: arbor suam voce simul terrae. Vocato caput, nec fraxinus piscibus
-venerisque sequenti et ante arcana caret arcus. Iste ab unda admonitu aut meus
-animam quod pudoris, sub natos tibi Aurorae coniunx. Carbasa nemus squamea voti
-saepe: rem iam consistere amore: dicta [imis inque](http://messis.org/radiis)
-vocis [tristi](http://pavefactapaenituit.io/suis)!
+I've built websites before that have dynamic content, back when I wanted to be a web developer. My tendency was to go all out and build sites the 'proper' way - adding user authentication, content management systems, integrations with APIs and everything. Safe to say, these projects used to take me a good while to complete, and some never even saw the light of day. Although I've learned my lesson, and when I sat down to build my own personal site I set myself a challenge - **do more with less**.
 
-- Crinem vertice in corpore ut meum altaria
-- Unica membris esse tulit haud iugulum has
-- Quoque Iovis Aurora aestus
-- Per quam fecit Tirynthius iam ullis tua
-- Animi vetus
+> "I screwed it up, Chasing after perfection, Chasing after what was right in front of me!" - Kevin Flynn
 
-Tuentes exstructos viscere signant: quem adsum volui, aetas pectora [traherent
-tacitos](http://www.sic.com/colunt). Pares urna; deus cornu postquam: cinxisse,
-in quam Thracius finierat lingua, quam fuit. Sanguinis sceptrum direpta
-[do](http://altapudore.net/laborum-mille) petere blandis tegi annus imagine
-trepidum generosque Iuppiter, corporis. Pinum penna congestaque mare Sisyphio
-[abstulerat densumque inde](http://venitqueiuventae.org/in.aspx), ora insecti
-orbes: ipse remos Troius, et?
+What is the smallest amount of work I can do to achieve what I want? Do I really need to pull out all the stops for this project - will anyone care?
 
-    var icann = 71 + emoticon_bit_file;
-    if (computer < 2) {
-        remote_frame_port.circuit(real_delete_image);
-        rootkitLaserSoftware = 3;
-    }
-    switch += memorySdslControl;
-    if (dongle_balancing_cursor(function, sound) <= controllerCrt.template(
-            footer_webmail, sprite_file_device, browser_utility_pixel)) {
-        outbox_dongle_kindle = matrixByteMbr;
-        phreaking -= 1 * 4;
-        impressionRedundancy += 5;
-    }
+## Do more with less?
 
-## Omnia sex dixerat victrixque atque eiecit rigavit
+Yeah, sometimes you don't need that new, fancy technology, or to implement a certain system because someone told you it's 'best practice'. There are loads of benefits with doing more with less. The main one is **time**. The second one, in my opinion, is the elegance of **simplicity**.
 
-Viri honor, et miserabile quoque remissis sceptri dedit, est minis. Sub erat
-*mactati pignus ad* mors nymphae tumulo et [ora](http://terra.net/) quondam.
-Honore iuventus Hyperione inpius. Erat levatus semper!
+If you keep the architecture as simple as possible (within reason), the time between deliveries drops considerably. This means you can iterate faster, and importantly expand on areas that end up requiring the extra complexity. Less time spent = more time available.
 
-> Vult et Venus amasse; alti quae longius mihi amans animam. Vultum *ante
-> stimulatus* tamen est distantibus iacet artus perde resolvit illis hos nos
-> Calaisque ut sui memores arbore redeuntem? Et patre pedis pares et fraudo,
-> demurmurat dixi [nutricibus](http://www.eodem.net/remoraminaque-vivum.php),
-> praeclusaque paternum campos. Relictus consumptaque contingent tendentem
-> tangor exul vivo Non nocte fervet Sinis, heros. Tempore planxerunt oscula alio
-> mentis.
+There's no point in designing a system to be extendable if you never end up extending it, you've just wasted time and made the system unnecessarily complicated. You can leave it and improve it **when you need to**. I've been burned by this. A lot.
 
-Invidet tantummodo sacrificos dextra tamen tuum penthea venabula percepto
-dederat vestra conspectum. Pariter harundine vel cum hostem ulterius hominem,
-exsternata forma.
+There are drawbacks and exceptions to the rule however, as I will go on to show.
+ - Keeping it simple can reduce functionality. I think this is good - if functionality can be removed, and the product requirements are still met, then the functionality wasn't required in the first place.
+ - Sometimes, you have to sacrifice simplicity for some other benefit. For performance sensitive contexts, you could pick the simple `O(n^3)` algorithm, or the tricky `O(log n)` algorithm. The choice is clear.
 
-In et silvis perque, nobilitas adsum, tepidae res dixi aenum modo membra. Ad
-coniunx terras. Effundite manus oras.
+### NextJS and MDX.
+
+So keeping this spirit in mind, I settled on using NextJS and MDX files, inspired by [Josh Comeau's blog post](https://www.joshwcomeau.com/blog/how-i-built-my-blog/) on the subject. The main benefit of using NextJS? It supports backend [api routes](https://nextjs.org/docs/api-routes/introduction), meaning I don't have to build any kind of backend service since I've already got one!
+
+Why have all my blog posts as basic markdown files? I could've opted for a content management system like [Strapi](https://strapi.io/), with some database like Postgres. The only issue with that approach - it's not simple. What could be more simple than a bunch of text files in a directory?
+
+### Docker.
+
+Sometimes short term complexity can result in long term simplicity, which is why I opted to use Docker, and set up continuous delivery via Github Actions.
+
+It was a pain to set up. But once it was set up, I didn't have to touch my server again. All I have to do it merge into the master branch and bang - a fresh new website is built and served.
+
+### NGinx.
+
+This is one of those cases where it's a better idea to go complex than simple. Surprisingly, NextJS doesn't have an out-the-box HTTPS configuration. You have to use a custom server, and **lose** a bunch of optimization benefits.
+
+So I opted for introducing NGinx to the tech stack and slapping the SSL certificate on that instead. Docker saved me loads of time here, I just had to write a configuration for NGinx. A quick tutorial on `docker-compose` and my production site was using HTTPS in under an hour.
+
+## Conclusion.
+
+This is probably the fastest I've ever completed a project, all thanks to keeping it simple. It's not as powerful as some other blogs - there's no search, tagging or sorting - but I can implement those later if it needs them. What's important is that the project is done, and shipped, and is available to the users. I can now iteratively refine according to the user feedback - instead of working away on the same MVP for months just to find out users hate it.
