@@ -4,6 +4,10 @@ import PropTypes from "prop-types";
 import Navbar from "../navbar/Navbar.comp";
 import Footer from "../footer/Footer.comp";
 import styles from './Page.module.scss';
+import Adventure from "../../utils/adventure";
+
+const shh = new Adventure();
+shh.init();
 
 const Page = ({meta, margin, children}) => {
 

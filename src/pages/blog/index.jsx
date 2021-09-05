@@ -1,34 +1,15 @@
-import React from 'react';
-import Link from 'next/link'
-import Page from "../../components/page/Page.comp";
-import Section from "../../components/section/Section.comp";
-import Container from "../../components/container/Container.comp";
-import Column from "../../components/column/Column.comp";
-import MdxUtil from "../../utils/mdx.util";
+import PostsService from "../../utils/posts.service";
+import BlogPage from "../../views/blog/Blog.page";
 
-const BlogIndex = ({ fileNames }) => {
-
-  return (
-    <Page>
-      <Section>
-        <Container>
-          <Column>
-            <h1>All blogs</h1>
-            <ul>
-              {fileNames.map((fileName, i) => <li key={i}><Link href={'/blog/'+fileName}>{fileName}</Link></li>)}
-            </ul>
-          </Column>
-        </Container>
-      </Section>
-    </Page>
-  );
+const BlogIndex = (props) => {
+  return <BlogPage {...props} />;
 };
 
 export async function getStaticProps() {
-  const docs = MdxUtil.getDocs('./src/pages/blog', ['index']);
+  const posts = await PostsService.getPosts();
   return {
     props: {
-      fileNames: docs
+      posts
     }
   }
 }

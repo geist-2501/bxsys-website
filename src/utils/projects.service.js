@@ -1,6 +1,7 @@
 import MdxUtil from "./mdx.util";
 
 export default class ProjectsService {
+
   static async getProjects() {
     const filenames = MdxUtil.getMdxNames('src/pages/project');
     let projMetas = [];
@@ -17,9 +18,5 @@ export default class ProjectsService {
     }
 
     return projMetas;
-  }
-
-  static getFeaturedProjects() {
-    const docs = MdxUtil.getDocs('./src/pages/project', ['index']);
   }
 }

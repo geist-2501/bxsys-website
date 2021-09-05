@@ -1,0 +1,59 @@
+import BlogView from "../../views/blog/Blog.view";
+export const meta = {
+  title: 'How I Built This Site.',
+  author: 'Blair Cross',
+  date: new Date(2021, 8, 4).getTime(),
+  tags: 'MDX, React, NextJS, Javascript, Blog',
+  desc: 'Sometimes there are things that are really important. In this post Im going to talk about those things.'
+}
+
+export default ({children}) => <BlogView meta={meta}>{children}</BlogView>;
+
+I've worked on quite a few personal projects over the years. Unfortunately, very little of them ever saw the light of day. The projects didn't fail because I was too ambitious - they failed because they were *overscoped*. I would be stubborn and implement existing systems 'my way', or work with complicated tech stacks because it was 'the right way'  - costing time, effort and complexity.
+
+> "I screwed it up, chasing after perfection, chasing after what was right in front of me." - Kevin Flynn
+
+This, really, was my ego talking, thinking I should be tackling problems like I was an enterprise, and not one person. Although I've learned my lesson, and when I sat down to build my own personal site I set myself a challenge - **do more with less**.
+
+## Do more with less?
+
+The idea is that you try to solve a problem using as little energy as possible, not only in the short term, but in the long term too. There are loads of benefits with doing more with less. The main one is **time**. The second one, in my opinion, is the elegance of **simplicity**.
+
+If you keep the architecture as simple as possible (within reason), the time between deliveries drops considerably. This means you can iterate faster, and importantly expand on areas that end up requiring the extra complexity. Less time spent = more time available.
+
+There's no point in designing a system to be extendable if you never end up extending it, you've just wasted time and made the system unnecessarily complicated. Leave it alone and improve it **when you need to**. I've been burned by this. A lot.
+
+There are drawbacks and exceptions to the rule however, as I will go on to show.
+ - Keeping it simple can reduce functionality. I think this is good - if functionality can be removed, and the product requirements are still met, then the functionality wasn't required in the first place.
+ - Sometimes, you have to sacrifice simplicity for some other benefit. For performance sensitive contexts, you could pick the simple `O(n^3)` algorithm, or the tricky `O(log n)` algorithm. The choice is clear.
+
+**I should make it clear** that the practice of doing more with less does not excuse quick hacks or not writing tests. It's more about preventing your grandiose vision getting in the way of simple implementations. After all, a quick hack might cost no effort in the short term, but long term it'll come back and bite you. They *always* do.
+
+## Building the Simplest Website Stack.
+
+I've built websites before, and there's a plethora of stuff to choose from. Frontend frameworks like React and Vue, backend languages and frameworks like C# & ASP.NET, Java & Spring Boot and (if you hate yourself) C++ & WT, and databases like Postgres and MongoDB. All have their own intricacies and style.
+
+So to keep things as simple as possible I chose one. Not one stack, just one framework.
+
+### NextJS and MDX.
+
+I settled on using NextJS and markdown files, inspired by [Josh Comeau's blog post](https://www.joshwcomeau.com/blog/how-i-built-my-blog/) on the subject. The main benefit of using NextJS? It supports backend [api routes](https://nextjs.org/docs/api-routes/introduction), meaning I don't have to build any kind of backend service since I've already got one, albeit fairly simple.
+
+Why have all my blog posts as basic markdown files? I could've opted for a content management system like [Strapi](https://strapi.io/), with some database like Postgres. The only issue with that approach - it's not simple, and I don't need it. Simplicity is relative - what might be simple for me might be complex to others and vice versa. I'm a developer - what could be more simple than a bunch of text files in a directory?
+
+
+### Docker.
+
+Sometimes short term complexity can result in long term simplicity, which is why I opted to use Docker, and set up continuous delivery via Github Actions.
+
+It was a pain to set up. But once it was set up, I didn't have to touch my server again. All I have to do it merge into the master branch and bang - a fresh new website is built and served.
+
+### NGinx.
+
+This is one of those cases where it's a better idea to go complex than simple. Surprisingly, NextJS doesn't have an out-the-box HTTPS configuration. You have to use a custom server, and **lose** a bunch of optimization benefits.
+
+So I opted for introducing NGinx to the tech stack and slapping the SSL certificate on that instead. Docker saved me loads of time here, I just had to write a configuration for NGinx and a Dockerfile - no installation or anything. A quick tutorial on `docker-compose` to get NGinx talking to NextJS, and my production site was using HTTPS in under an hour.
+
+## Conclusion.
+
+This is probably the fastest I've ever completed a project (2 weeks of spare time), all thanks to keeping it simple. It's not as powerful as some other blogs - there's no search, tagging or sorting - but I can implement those later if it needs them. What's important is that the project is done, and shipped, and is available to the users. I can now iteratively refine according to the user feedback - instead of working away on the same MVP for months just to find out users hate it.

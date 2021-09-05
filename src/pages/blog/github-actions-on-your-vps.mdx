@@ -1,13 +1,13 @@
-import BlogPost from "../../components/blogPost/BlogPost.comp";
+import BlogView from "../../views/blog/Blog.view";
 export const meta = {
-  title: 'Test blog post 1',
-  author: 'Blair',
-  date: '3rd Aug 2021'
+  title: 'Github Actions on your own VPS.',
+  author: 'Blair Cross',
+  date: new Date(2021, 7, 1).getTime(),
+  tags: 'MDX, React, NextJS, Javascript, Blog',
+  desc: 'Sometimes there are things that are really important. In this post Im going to talk about those things.'
 }
 
-export default ({children}) => <BlogPost meta={meta}>{children}</BlogPost>;
-
-## Trahit tempora nec dixit
+export default ({children}) => <BlogView meta={meta}>{children}</BlogView>;
 
 *Lorem markdownum* laetos; quoque paulum perstat pura. Stetit quam offensane
 vestra: arbor suam voce simul terrae. Vocato caput, nec fraxinus piscibus

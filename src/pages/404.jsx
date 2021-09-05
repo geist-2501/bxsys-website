@@ -1,13 +1,8 @@
 import React from 'react';
-import styles from './404.module.scss';
+import My404Page from "../views/404/404.page";
 
 const my404 = () => {
-  return (
-    <div className={styles.main}>
-      <h1>404</h1>
-      <h4>Uh oh</h4>
-    </div>
-  );
+  return <My404Page />;
 };
 
 export default my404;
