@@ -11,7 +11,7 @@ const MediaLink = ({src, size, href}) => {
 
   return (
     <Link href={href}>
-      <a href={href} className={classes(styles.link, sizeClass)} target='_blank' >
+      <a href={href} className={classes(styles.link, sizeClass)} target='_blank' rel="noreferrer" >
         <FontAwesomeIcon icon={src} />
       </a>
     </Link>
