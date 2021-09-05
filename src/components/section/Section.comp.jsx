@@ -3,7 +3,9 @@ import styles from './Section.module.scss'
 import classes from "../../utils/classes";
 import PropTypes from "prop-types";
 
-const Section = ({type, children}) => {
+const Section = ({type, hidden, children}) => {
+
+  if (hidden) return <></>;
 
   const typeClass = type ? styles[type] : '';
 
