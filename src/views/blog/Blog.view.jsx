@@ -8,7 +8,7 @@ import DateService from "../../utils/date.service";
 
 const BlogView = ({meta, children}) => {
   return (
-    <Page>
+    <Page meta={{name: `${meta.title} | BXSYS`, desc: meta.desc}}>
       <Section type="lead">
         <Container type="thin">
           <Column>

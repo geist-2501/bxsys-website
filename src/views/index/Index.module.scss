@@ -5,3 +5,13 @@
 .interests {
   margin-bottom: 80px;
 }
+
+.name_tag {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .name_tag_title {
+    margin-right: 30px;
+  }
+}
