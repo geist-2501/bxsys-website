@@ -57,7 +57,7 @@ const PortfolioPage = ({ projects }) => {
           </Column>
         </Container>
       </Section>
-      <Section hidden>
+      <Section>
         <Container>
           <Column className={styles.projects}>
             <h2>Projects.</h2>
