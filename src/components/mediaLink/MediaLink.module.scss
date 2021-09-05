@@ -6,4 +6,10 @@
   margin: 0 10px;
   font-size: 22px;
   color: $bxsys-black;
+
+  &.large {
+    font-size: 32px;
+    width: 30px;
+    margin: 0 20px;
+  }
 }
