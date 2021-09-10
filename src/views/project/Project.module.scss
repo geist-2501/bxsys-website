@@ -1,0 +1,43 @@
+.project_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin: 20px 0;
+
+    .image {
+        width: 50%;
+        background-image: var(--bg-image);
+    }
+}
+
+.project_grid_wrapper {
+    display: grid;
+
+    align-items: center;
+    
+    grid-template-rows: auto auto;
+    grid-template-columns: min-content auto;
+
+    grid-template-areas: 
+        "a b"
+        "c d";
+
+    .bullet {
+        grid-area: a;
+        margin: 0 20px;
+    }
+
+    .title {
+        grid-area: b;
+    }
+
+    .content {
+        grid-area: d;
+
+        .button {
+            margin-top: 20px;
+        }
+    }
+
+}
