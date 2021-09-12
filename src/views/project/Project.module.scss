@@ -7,7 +7,10 @@
 
     .image {
         width: 50%;
+        flex-shrink: 0;
         background-image: var(--bg-image);
+        background-position: center;
+        background-size: cover;
     }
 }
 
