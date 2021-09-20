@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Project.module.scss';
 import Page from "../../components/page/Page.comp";
 import Section from '../../components/section/Section.comp';
@@ -8,6 +8,11 @@ import Button from '../../components/button/Button.comp';
 import Bullet from '../../components/bullet/Bullet.comp';
 
 const ProjectPage = ({ projects }) => {
+
+  function pad(num) {
+    return String(num).padStart(2, '0');
+  }
+
   return (
     <Page>
       <Section>
@@ -26,7 +31,9 @@ const ProjectPage = ({ projects }) => {
                     </Button>                  
                   </div>
                 </div>
-                <div className={styles.image} style={{"--bg-image": "url(/projectimage.png)"}} />
+                <div className={styles.image} style={{"--bg-image": `url(${project.image})`}}>
+                  <p className={styles.image_num}>{pad(i)}</p>
+                </div>
               </div>
             ))}
           </Column>

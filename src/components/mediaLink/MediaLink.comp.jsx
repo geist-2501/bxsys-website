@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import classes from "../../utils/classes";
+import orDefault from '../../utils/orDefault';
 
 const MediaLink = ({src, size, href}) => {
 
@@ -18,7 +19,16 @@ const MediaLink = ({src, size, href}) => {
   );
 };
 
-export const LinkedInLink = (props) => <MediaLink src={faLinkedin} href="https://www.linkedin.com/in/blair-cross/" {...props} />
-export const GithubLink = (props) => <MediaLink src={faGithub} href="https://github.com/geist-2501" {...props} />
+export const LinkedInLink = ({url, ...props}) => <MediaLink 
+  src={faLinkedin} 
+  href={orDefault(url, "https://www.linkedin.com/in/blair-cross/")} 
+  {...props} 
+/>
+
+export const GithubLink = ({url, ...props}) => <MediaLink 
+  src={faGithub} 
+  href={orDefault(url, "https://github.com/geist-2501")}
+  {...props} 
+/>
 
 export default MediaLink;

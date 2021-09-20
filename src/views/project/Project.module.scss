@@ -11,14 +11,26 @@
         background-image: var(--bg-image);
         background-position: center;
         background-size: cover;
+
+        position: relative;
+
+        .image_num {
+            position: absolute;
+            top: 6px;
+            left: -25px;
+            transform: rotate(90deg);
+        }
     }
 }
 
 .project_grid_wrapper {
     display: grid;
 
-    align-items: center;
+    // align-items: center;
     
+    margin: 20px 0;
+    padding-right: 30px;
+
     grid-template-rows: auto auto;
     grid-template-columns: min-content auto;
 
@@ -28,7 +40,7 @@
 
     .bullet {
         grid-area: a;
-        margin: 0 20px;
+        margin: 15px 20px 0;
     }
 
     .title {
@@ -43,4 +55,8 @@
         }
     }
 
+}
+
+.view_image {
+    height: 20vh;
 }

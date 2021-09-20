@@ -2,10 +2,11 @@ import ProjectView from "../../views/project/Project.view";
 export const meta  = {
   featured: false,
   title: "Downward Dungeon Beep Boop long name",
-  desc: "A Lightweight Platformer written in C#"
+  desc: "A Lightweight Platformer written in C#",
+  image: "/projectimage.png"
 }
 
-export default ({ children }) => <ProjectView>{children}</ProjectView>
+export default ({ children }) => <ProjectView meta={meta}>{children}</ProjectView>
 
 ## Development overview.
 
