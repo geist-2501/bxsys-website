@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './Project.module.scss';
 import Page from "../../components/page/Page.comp";
 import Section from '../../components/section/Section.comp';
@@ -28,7 +28,7 @@ const ProjectPage = ({ projects }) => {
                     <i >{project.desc}</i>
                     <Button href={`/project/${project.name}`} className={styles.button}>
                       Read more
-                    </Button>                  
+                    </Button>
                   </div>
                 </div>
                 <div className={styles.image} style={{"--bg-image": `url(${project.image})`}}>

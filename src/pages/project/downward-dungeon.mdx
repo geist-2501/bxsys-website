@@ -1,16 +1,21 @@
-import ProjectView from "../../views/project/Project.view";
+import ProjectView from "../../views/project/Project.view"; import FlexImage
+  from "../../components/flexImage/FlexImage.comp";
 export const meta  = {
   featured: false,
-  title: "Downward Dungeon Beep Boop long name",
-  desc: "A Lightweight Platformer written in C#",
-  image: "/projectimage.png"
+  title: "Downward Dungeon.",
+  desc: "A Lightweight Platformer written in C#.",
+  image: "/res/downward-dungeon/downward-dungeon.webp",
+  date: new Date(2018, 1, 1).getTime()
 }
 
 export default ({ children }) => <ProjectView meta={meta}>{children}</ProjectView>
 
-## Development overview.
+Downward Dungeon is a 2D platforming game I made back in 2018, with a distinctly retro aesthetic. Written in Unity with C#.
 
- - Beep
- - Boop
+It even managed to foster a small speedrunning community around it.
+
+You can download it [here](https://gamejolt.com/games/Downward/361019), for free.
+
+<FlexImage url={'/res/downward-dungeon/example-image.webp'} type={'standard'} />
 
 

@@ -3,9 +3,10 @@ import style from './FlexImage.module.scss';
 import PropTypes from "prop-types";
 import classes from '../../utils/classes';
 
-const FlexImage = ({url, className}) => {
+const FlexImage = ({url, className, type}) => {
+  const typeClass = type ? style[type] : '';
   return (
-    <div className={classes(style.flex_image, className)} style={{"--bg-image": `url(${url})`}} />
+    <div className={classes(style.flex_image, className, typeClass)} style={{"--bg-image": `url(${url})`}} />
   )
 }
 

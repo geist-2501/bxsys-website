@@ -15,7 +15,7 @@ const Container = ({ children, className, type, ...props }) => {
 };
 
 Container.propTypes = {
-  type: PropTypes.oneOf(['thin'])
+  type: PropTypes.oneOf(['thin', 'wide'])
 }
 
 export default Container;

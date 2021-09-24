@@ -26,15 +26,15 @@
 .project_grid_wrapper {
     display: grid;
 
-    // align-items: center;
-    
+     align-items: baseline;
+
     margin: 20px 0;
     padding-right: 30px;
 
     grid-template-rows: auto auto;
     grid-template-columns: min-content auto;
 
-    grid-template-areas: 
+    grid-template-areas:
         "a b"
         "c d";
 
@@ -59,4 +59,8 @@
 
 .view_image {
     height: 20vh;
+}
+
+.view_title {
+    margin-bottom: 1rem;
 }

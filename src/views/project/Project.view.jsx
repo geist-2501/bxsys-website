@@ -5,7 +5,7 @@ import Section from "../../components/section/Section.comp";
 import Container from "../../components/container/Container.comp";
 import Column from "../../components/column/Column.comp";
 import FlexImage from '../../components/flexImage/FlexImage.comp';
-import Links from "../../components/links/Links.comp";
+import Markdown from "../../components/markdown/Markdown.comp";
 
 const ProjectView = ({children, meta}) => {
   return (
@@ -20,9 +20,11 @@ const ProjectView = ({children, meta}) => {
       <Section>
         <Container>
           <Column>
-            <h1>{meta.title}<Links links={['github.com', 'linkedin.com']} /></h1>
-            <h3><i>{meta.desc}</i></h3>
-            {children}
+            <h1 className={style.view_title}>{meta.title}</h1>
+            <h3 className={style.view_title}><i>{meta.desc}</i></h3>
+            <Markdown>
+              {children}
+            </Markdown>
           </Column>
         </Container>
       </Section>
