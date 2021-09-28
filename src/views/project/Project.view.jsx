@@ -6,6 +6,7 @@ import Container from "../../components/container/Container.comp";
 import Column from "../../components/column/Column.comp";
 import FlexImage from '../../components/flexImage/FlexImage.comp';
 import Markdown from "../../components/markdown/Markdown.comp";
+import PropTypes from "prop-types";
 
 const ProjectView = ({children, meta}) => {
   return (
@@ -31,5 +32,15 @@ const ProjectView = ({children, meta}) => {
     </Page>
   );
 };
+
+ProjectView.propTypes = {
+  meta: PropTypes.shape({
+    featured: PropTypes.bool,
+    title: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    date: PropTypes.number.isRequired
+  })
+}
 
 export default ProjectView;

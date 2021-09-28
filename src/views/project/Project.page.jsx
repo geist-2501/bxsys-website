@@ -19,7 +19,7 @@ const ProjectPage = ({ projects }) => {
         <Container>
           <Column>
             <h1>My Projects.</h1>
-            {projects.map((project, i) => (
+            {projects.sort((a, b) => b.date - a.date).map((project, i) => (
               <div key={i} className={styles.project_wrapper}>
                 <div className={styles.project_grid_wrapper}>
                   <Bullet className={styles.bullet} />
