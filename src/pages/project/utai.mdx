@@ -1,0 +1,27 @@
+import ProjectView from "../../views/project/Project.view";
+export const meta  = {
+  featured: true,
+  title: "UTAI.",
+  desc: "A Powerful AI Framework in C++.",
+  image: "/res/utai/utai-cover.jpg",
+  date: new Date(2021, 8, 4).getTime()
+}
+
+export default ({ children }) => <ProjectView meta={meta}>{children}</ProjectView>
+
+UTAI stands for Utility Tree AI, and is a project **currently in development**. It faced a major reshuffle during summer as it was rescoped, and is hence delayed.
+
+#### What is UTAI?
+
+UTAI is an AI framework for Unreal Engine 4 that enables the dynamic behaviour of [utility AI](https://www.tomlooman.com/journey-into-utility-ai-ue4/) (UAI) alongside the structured design of behaviour trees (BTs).
+
+#### Feature Set.
+
+- A general purpose Utility AI engine.
+- Tight integration with UE4's behaviour tree system.
+- Exemplar C++ scripts for tasks and services on how implement your own UAI.
+
+
+#### Planned Release.
+
+The framework is currently unavailable as it isn't in MVP status at the moment. It is planned to reach MVP this winter 2021, which will be when it's made available on Github and the Unreal marketplace for free.

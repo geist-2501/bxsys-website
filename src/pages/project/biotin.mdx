@@ -1,0 +1,26 @@
+import ProjectView from "../../views/project/Project.view";
+export const meta  = {
+  featured: true,
+  title: "Biotin.",
+  desc: "A Federated Social Media Platform.",
+  image: "/res/biotin/biotin-cover.jpg",
+  date: new Date(2021, 8, 4).getTime()
+}
+
+export default ({ children }) => <ProjectView meta={meta}>{children}</ProjectView>
+
+Biotin is a federated content social media platform that I helped develop at the University of St Andrews.
+
+### Federated?
+
+A federated system is one that has no central point of control. A system like Facebook is all controlled by Facebook, and naturally causes some concern to those who are more data literate. To be federated is to be decentralised, and to have control of the local domain you operate in.
+
+Biotin is one of those domains, and it can exchange data like posts, likes and comments with other social media sites that implement the same protocol.
+
+### Tech Stack.
+
+We used React JS and Loopback 4. Loopback 4 is a JS server side framework by IBM, and was particularly underbaked. Lots of custom systems had to be written for this project thanks to this fact.
+
+### So Where is it?
+
+Due to being a University project, it is closed source :(.

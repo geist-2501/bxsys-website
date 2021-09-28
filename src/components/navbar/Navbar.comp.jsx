@@ -18,6 +18,7 @@ const Navbar = () => {
         <NavButton href={'/'}>Index</NavButton>
         <NavButton href={'/blog'}>Blog</NavButton>
         <NavButton href={'/portfolio'}>Portfolio</NavButton>
+        <NavButton href={'/project'}>Projects</NavButton>
       </nav>
     </div>
   );
